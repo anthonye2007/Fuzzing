@@ -40,10 +40,16 @@ var passedTests = 0;
 
 function mutationTesting()
 {
-    var markDown = fs.readFileSync('test.md','utf-8');
-    //var markDown = fs.readFileSync('simple.md','utf-8');
+        var markDownTest = fs.readFileSync('test.md','utf-8');
+        var markDownSimple = fs.readFileSync('simple.md','utf-8');
 
     for (var i = 0; i < 1000; i++) {
+
+        if (fuzzer.random.bool(0.5)) {
+            var markDown = markDownTest;
+        } else {
+            var markDown = markDownSimple;
+        }
 
         var mutuatedString = fuzzer.mutate.string(markDown);
 
