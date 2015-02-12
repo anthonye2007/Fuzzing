@@ -34,6 +34,14 @@ var fuzzer =
                 array.splice(startLocation, numCharsToRemove);
             }
 
+            if (fuzzer.random.bool(0.25)) {
+                // insert random number of chars at random location
+                var numCharsToAdd = fuzzer.random.integer(1,200);
+                var startLocation = fuzzer.random.integer(0, array.length - 1);
+                var stringToAdd = fuzzer.random.string(numCharsToAdd);
+                array.splice(startLocation, 0, stringToAdd);
+            }
+
             return array.join('');
         }
     }
