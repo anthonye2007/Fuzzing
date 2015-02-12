@@ -1,9 +1,7 @@
 var test = require('tap').test,
-    //fuzzer = require('fuzzer'),
     Random = require('random-js')
     marqdown = require('./marqdown.js'),
     fs = require('fs'),
-    //stackTrace = require('stack-trace')
     stackTrace = require('stacktrace-parser')
     ;
 
@@ -26,6 +24,7 @@ var fuzzer =
             if( fuzzer.random.bool(0.05) )
             {
                 // REVERSE
+		array.reverse();
             }
 
             return array.join('');
