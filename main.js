@@ -24,7 +24,11 @@ var fuzzer =
             if( fuzzer.random.bool(0.05) )
             {
                 // REVERSE
-		array.reverse();
+        		array.reverse();
+            }
+
+            if (fuzzer.random.bool(0.25)) {
+                // remove random number of chars at random location
             }
 
             return array.join('');
