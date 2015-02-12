@@ -29,6 +29,10 @@ var fuzzer =
 
             if (fuzzer.random.bool(0.25)) {
                 // remove random number of chars at random location
+                var numCharsToRemove = 5;
+                var startLocation = 20;
+                array.splice(numCharsToRemove, startLocation);
+                console.log('removed chars');
             }
 
             return array.join('');
